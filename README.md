@@ -37,3 +37,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 
 23-06-2024: Se trabajo en ubicar el sidebar. Esta pendiente organizar que las pantallas hijas puedan tener su espacio correctamente. Hay que entender y documentar como es que funcionan los espaciones con el sidebar y sin el.
+
+Poner una iamgen de fondo.
+- Que tenga un tamaño adecuado
+- Que se adapte automaticamente al tamaño del dispositivo
+- Ubicar el timer en una posicion adecuada.
+- Que la imagen abarque toda la pantalla y que el icono de integre con el fondo
+Buscar una paleta de colores para dark y light

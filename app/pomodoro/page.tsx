@@ -1,4 +1,8 @@
 "use client";
+//import background from "../../public/"
+
+import { Button } from "@/components/ui/button";
+import { RotateCcw } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 export default function Pomodoro() {
@@ -55,8 +59,8 @@ export default function Pomodoro() {
 
   const clearTimer = () => {
     setStatusTimer(true);
-    setTimer("25:00");
-    setMinutes("24");
+    setTimer("20:00");
+    setMinutes("19");
     setSeconds("60");
     if (Ref.current) clearInterval(Ref.current);
   };
@@ -71,20 +75,19 @@ export default function Pomodoro() {
 
   return (
     <>
-      <div className="flex flex-col h-screen bg-gray-100">
+      <div className="flex flex-col h-screen">
         <div className="grid place-items-center mx-2 my-20 sm:my-auto">
           <div className="w-11/12 p-12 sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-3/12 px-6 py-10 sm:px-10 sm:py-6 bg-white rounded-lg shadow-md lg:shadow-lg">
             <h1 className="text-center font-semibold text-7xl text-gray-800">
               {timer}
             </h1>
             <div className="grid grid-cols-8 gap-1">
-              <button
-                className="w-full mt-10 bg-gray-800 rounded-sm font-medium text-white uppercase focus:outline-none hover:bg-gray-700 hover:shadow-none col-span-7"
-                onClick={onClickStart}
-              >
+              <Button className="border-solid" onClick={onClickStart}>
                 {statusTimer === true ? "Start" : "Pause"}
-              </button>
-              <button className="restart mt-10" onClick={onClickReset} />
+              </Button>
+              <Button variant="outline" size="icon" onClick={onClickReset}>
+                <RotateCcw className="h-4 w-4" />
+              </Button>
             </div>
           </div>
         </div>

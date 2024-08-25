@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+
 import { ThemeProvider } from "@/components/theme-provider";
-import Sidebar from "@/components/Sidebar";
-import { ModeToggle } from "@/components/ModeToggle";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -35,14 +35,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* Este div encierra al nav (Sidebar y al main (children)) 
-          no se sabe como funcionan h-screen border-collapse overflow-hidden investigar*/}
-          <div className="flex h-screen border-collapse overflow-hidden">
-            <Sidebar />
-            <div className="flex-1 overflow-y-auto overflow-x-hidden pt-16 bg-secondary/10 pb-1">
-              {children}
-            </div>
+          <div className="flex flex-col place-items-end">
+            <ModeToggle />
           </div>
+          {children}
         </ThemeProvider>
       </body>
     </html>
