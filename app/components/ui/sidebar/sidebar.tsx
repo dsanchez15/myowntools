@@ -12,7 +12,7 @@ import { SidebarThemeToggle } from './sidebar-theme-toggle';
 export const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [activeMenu, setActiveMenu] = useState<number | null>(null);
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
 
   // Efectos anteriores de tema se mantienen igual...
 
