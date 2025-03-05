@@ -1,7 +1,7 @@
-export default function Home() {
+export default function DashboardPage() {
   return (
-    <div className="h-full">
-      <div className=" bg-white text-blue-700">MainPage</div>
+    <div>
+      <h1 className="text-2xl font-bold mb-4">Dashboard Principal... En contrucción</h1>
     </div>
-  );
+  )
 }

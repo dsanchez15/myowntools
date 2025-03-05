@@ -3,8 +3,7 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-import { ThemeProvider } from "@/components/theme-provider";
-import { ModeToggle } from "@/components/mode-toggle";
+import { Sidebar } from "./components/ui/sidebar/sidebar";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -29,17 +28,10 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="flex flex-col place-items-end">
-            <ModeToggle />
-          </div>
-          {children}
-        </ThemeProvider>
+        <div className="flex">
+          <Sidebar />
+          <main className="ml-64 flex-grow p-4">{children}</main>
+        </div>
       </body>
     </html>
   );
