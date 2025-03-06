@@ -4,20 +4,20 @@ export const menuItems = [
   {
     icon: Home,
     label: 'Inicio', 
-    href: '/'
+    href: '/tools/dashboard'
   },
   {
     icon: Layers,
     label: 'Proyectos',
     submenus: [
-      { label: 'Pomodoro', href: '/pomodoro' }
+      { label: 'Pomodoro', href: '/tools/pomodoro' }
     ]
   },
   {
     icon: Calculator,
     label: 'Calculadoras',
     submenus: [
-      { label: '4x1000', href: '/calculadora/4x100' }
+      { label: '4x1000', href: '/tools/calculadora/4x100' }
     ]
   }
 ];

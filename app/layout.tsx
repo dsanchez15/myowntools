@@ -3,7 +3,7 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-import { Sidebar } from "./components/ui/sidebar/sidebar";
+import Providers from "./providers";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -28,11 +28,15 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <div className="flex">
-          <Sidebar />
-          <main className="ml-64 flex-grow p-4">{children}</main>
-        </div>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
+}
+
+{
+  /* <div className="flex">
+            <Sidebar />
+            <main className="ml-64 flex-grow p-4">{children}</main>
+          </div> */
 }

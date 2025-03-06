@@ -1,18 +1,15 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { 
-  ChevronLeft, 
-  ChevronRight 
-} from 'lucide-react';
-import { menuItems } from './sidebar-menu-items';
-import { SidebarThemeToggle } from './sidebar-theme-toggle';
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { menuItems } from "./sidebar-menu-items";
+import { SidebarThemeToggle } from "./sidebar-theme-toggle";
 
 export const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [activeMenu, setActiveMenu] = useState<number | null>(null);
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState("dark");
 
   // Efectos anteriores de tema se mantienen igual...
 
@@ -25,10 +22,10 @@ export const Sidebar = () => {
   };
 
   return (
-    <div 
+    <div
       className={`
         h-screen 
-        bg-white 
+        bg-sidebar 
         dark:bg-gray-900 
         border-r 
         dark:border-gray-700 
@@ -37,7 +34,7 @@ export const Sidebar = () => {
         fixed 
         left-0 
         top-0 
-        ${isCollapsed ? 'w-20' : 'w-64'}
+        ${isCollapsed ? "w-20" : "w-64"}
       `}
     >
       <div className="flex flex-col h-full">
@@ -45,10 +42,10 @@ export const Sidebar = () => {
         <div className="flex-grow">
           <div className="p-4 flex items-center justify-between">
             {!isCollapsed && (
-              <h2 className="text-xl font-bold dark:text-white">Mi App</h2>
+              <h2 className="text-xl font-bold dark:text-white">My Tools</h2>
             )}
-            <button 
-              onClick={toggleCollapse} 
+            <button
+              onClick={toggleCollapse}
               className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               {isCollapsed ? <ChevronRight /> : <ChevronLeft />}
@@ -71,7 +68,11 @@ export const Sidebar = () => {
                         rounded 
                         hover:bg-gray-100 
                         dark:hover:bg-gray-700
-                        ${activeMenu === index ? 'bg-gray-200 dark:bg-gray-800' : ''}
+                        ${
+                          activeMenu === index
+                            ? "bg-gray-200 dark:bg-gray-800"
+                            : ""
+                        }
                       `}
                     >
                       <item.icon className="mr-3" />
@@ -106,7 +107,7 @@ export const Sidebar = () => {
                 ) : (
                   // Nueva lógica para elementos sin submenús
                   <Link
-                    href={item.href || '#'}
+                    href={item.href || "#"}
                     className={`
                       w-full 
                       flex 
@@ -130,10 +131,10 @@ export const Sidebar = () => {
 
         {/* Menú de configuración (sin cambios) */}
         <div className="p-4 border-t dark:border-gray-700">
-          <SidebarThemeToggle 
-            theme={theme} 
-            setTheme={setTheme} 
-            isCollapsed={isCollapsed} 
+          <SidebarThemeToggle
+            theme={theme}
+            setTheme={setTheme}
+            isCollapsed={isCollapsed}
           />
         </div>
       </div>
